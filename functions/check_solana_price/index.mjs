@@ -13,6 +13,6 @@ export async function GET () {
   const priceData = (await priceResponse.json())
 
   return {
-    price: priceData[SOLANA_TOKEN_ADDRESS]
+    price: Number(priceData[SOLANA_TOKEN_ADDRESS])
   };
 };

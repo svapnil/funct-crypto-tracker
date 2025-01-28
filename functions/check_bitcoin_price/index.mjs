@@ -1,35 +1,19 @@
 /**
- * GET
+ * Bitcoin Price API
+ * Fetch the current price of Bitcoin in USD
+ * @returns {object}  priceObject
+ * @returns {number}  priceObject.price
  */
 export async function GET (context) {
 
-  return `HTTP GET!`;
+  const priceResponse = await fetch(`https://api.coinbase.com/v2/exchange-rates?currency=BTC`);
+  const priceData = (await priceResponse.json())
+
+  console.log(priceData.data.rates.USD);
+
+  return {
+    price: Number(priceData.data.rates.USD)
+  };
+
 
 };
-
-/**
- * POST
- */
-// export async function POST (context) {
-
-//   return `HTTP POST!`;
-
-// }
-
-/**
- * PUT
- */
-// export async function PUT (context) {
-
-//   return `HTTP PUT!`;
-
-// };
-
-/**
- * DELETE
- */
-// export async function DELETE (context) {
-
-//   return `HTTP DELETE!`;
-
-// };

@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@instant.dev/api": "^0.1.16",
+    "chai": "^5.1.2",
+    "dotenv": "^16.4.7",
+    "mocha": "^11.1.0"
+  },
+  "scripts": {
+    "start": "node serve.funct.mjs",
+    "test": "mocha test/run.mjs"
+  },
+  "private": true
+}
